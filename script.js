@@ -23,9 +23,11 @@ $(function () { // Makes sure that your function is called once all the DOM elem
 // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
 var pet_info = { name: "Pikachu", weight: 50, happiness: 60, energy: 100, image: "images/pikachu.png", message: "Hi there!" };
 
+//Causes a normal console error
 function clickedCauseErrorButton() {
   console.error('You clicked the error button!');
 }
+// causes a 404 error trying to access an invalid image
 function clickedInvalidImageButton() {
   const badImage = "/img/nothere";
   pet_info.image = badImage;
@@ -33,6 +35,7 @@ function clickedInvalidImageButton() {
   console.error('Image cannot be found!');
 }
 
+//causes a violation
 function clickedViolationButton() {
   const duration = 3000;
   const start = new Date().getTime();
@@ -41,15 +44,18 @@ function clickedViolationButton() {
   }
 }
 
+// causes a type error
 function clickedTypeErrorButton() {
   const user = null;
   console.log(user.name);
 }
 
+//creates a table within the conosle based on pet info
 function clickedTableButton() {
   console.table(pet_info);
 }
 
+// creates a console.group() and logs pet info within it
 function clickedStatsButton() {
   console.group();
   console.log('happiness: ' + pet_info.happiness);
@@ -58,6 +64,7 @@ function clickedStatsButton() {
   console.groupEnd();
 }
 
+// displays a message using custom css
 function clickedSpecialButton() {
   const spacing = '5px';
   const styles = 
